@@ -1,5 +1,4 @@
-import React, { Component } from 'react';
-import PropTypes from 'prop-types';
+import React, { Component, PropTypes } from 'react';
 import { View, requireNativeComponent, ViewPropTypes } from 'react-native';
 
 class BlurView extends Component {
@@ -12,6 +11,7 @@ class BlurView extends Component {
   render() {
     return (
       <NativeBlurView
+        ref={e => this._root = e}
         {...this.props}
         style={[
           { backgroundColor: 'transparent' },

@@ -1,3 +1,4 @@
+#import <UIKit/UIKit.h>
 #import "BlurView.h"
 #import "BlurEffectWithAmount.h"
 

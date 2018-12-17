@@ -1,6 +1,7 @@
-#import <React/RCTComponent.h>
+#import <UIKit/UIKit.h>
 #import "BlurView.h"
 #import "VibrancyView.h"
+#import "RCTComponent.h"
 
 @interface VibrancyView ()
 
@@ -16,10 +17,10 @@
         self.vibrancyEffectView = [[UIVisualEffectView alloc] init];
         self.vibrancyEffectView.frame = frame;
         [self updateVibrancyEffect];
-
+        
         [self.blurEffectView.contentView addSubview:self.vibrancyEffectView];
     }
-
+    
     return self;
 }
 
@@ -35,14 +36,14 @@
 
 - (void)updateBlurEffect
 {
-  [super updateBlurEffect];
-  [self updateVibrancyEffect];
+    [super updateBlurEffect];
+    [self updateVibrancyEffect];
 }
 
 - (void)updateVibrancyEffect
 {
-  self.vibrancyEffect = [UIVibrancyEffect effectForBlurEffect:self.blurEffect];
-  self.vibrancyEffectView.effect = self.vibrancyEffect;
+    self.vibrancyEffect = [UIVibrancyEffect effectForBlurEffect:self.blurEffect];
+    self.vibrancyEffectView.effect = self.vibrancyEffect;
 }
 
 @end
